@@ -3,6 +3,7 @@
     "description": "An highly effecient php mvc framework",
     "type": "library",
     "license": "MIT",
+    "version":"1.0.0",
     "authors": [
         {
             "name": "github-lai",
