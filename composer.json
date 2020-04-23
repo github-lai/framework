@@ -1,0 +1,14 @@
+{
+    "name": "h3/framework",
+    "description": "An highly effecient php mvc framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "github-lai",
+            "email": "373515719@qq.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
