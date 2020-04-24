@@ -12,7 +12,6 @@ class Config{
 		}else{
 			$array = parse_ini_file($file,true);
 			self::$config['global'] = $array;
-			//print_r(self::$config);exit;
 		}
 	}
 
