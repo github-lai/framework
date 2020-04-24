@@ -17,7 +17,10 @@
     "autoload": {
     	"files":[],
 	"psr-4":{
-	   "Lib\\" :"lib"
+	   "Lib\\" :"lib",
+	   "Ctrl\\" :"usr/ctrl",
+	   "Model\\" :"usr/model",
+	   "Auth\\":"usr/auth"
 	}
     }
 }
