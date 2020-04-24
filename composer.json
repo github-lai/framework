@@ -11,5 +11,13 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+    	"files":[],
+	"psr-4":{
+	   "Lib\\" :"h3/framework/lib"
+	}
+    }
 }
