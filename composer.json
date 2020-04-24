@@ -17,7 +17,7 @@
     "autoload": {
     	"files":[],
 	"psr-4":{
-	   "Lib\\" :"h3/framework/lib"
+	   "Lib\\" :"lib"
 	}
     }
 }
