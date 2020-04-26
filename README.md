@@ -1,7 +1,7 @@
 # H3项目框架 framework
 
 #### 介绍
-H3项目框架
+H3项目依赖，专门用于构建H3项目
 
 #### 软件架构
 软件架构说明
@@ -13,7 +13,7 @@ H3项目框架
 
 #### 使用说明
 
-composer require h3/framework
+composer require h3/framework:dev-master
 
 #### 参与贡献
 
