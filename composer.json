@@ -18,7 +18,7 @@
 	   "Lib\\" :"lib",
 	   "Lib\\Cache" :"lib/cache",
 	   "Lib\\Db" :"lib/db",
-	   "Lib\\IBase" :"lib/ibase",
+	   "Lib\\IBase" :"lib/ibase"
 	}
     }
 }
