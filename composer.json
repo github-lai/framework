@@ -15,7 +15,10 @@
     "autoload": {
     	"files":[],
 	"psr-4":{
-	   "Lib\\" :"lib"
+	   "Lib\\" :"lib",
+	   "Lib\\Cache" :"lib/cache",
+	   "Lib\\Db" :"lib/db",
+	   "Lib\\IBase" :"lib/ibase",
 	}
     }
 }
