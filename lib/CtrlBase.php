@@ -102,7 +102,7 @@ class CtrlBase
 		$tplfull = $tpl.$ext;
 
 		//判断view是否存在
-		$viewfile = ROOTDIR."usr/Tpl/".$area.'/'.$this->controller."/".$tplfull;
+		$viewfile = ROOTDIR."usr/tpl/".strtolower($area).'/'.strtolower($this->controller)."/".$tplfull;
 		if(!file_exists($viewfile)){
 			die("找不到模板文件".$tplfull);
 		}
@@ -111,7 +111,7 @@ class CtrlBase
 				
 		if($layout !== false){
 			$layoutname = ($layout == null ? "_Layout" : $layout);
-			$masterfile = ROOTDIR."usr/Tpl/".$area."/".$layoutname.$ext;//在linux下大小写敏感，注意了
+			$masterfile = ROOTDIR."usr/tpl/".strtolower($area)."/".$layoutname.$ext;//在linux下大小写敏感，注意了
 			$tmp = "";
 			if(file_exists($masterfile)){
 				$tmp = file_get_contents($masterfile,"r");
