@@ -90,7 +90,7 @@ class Router{
 
 		Config::set("uri","$area/$controller/$action");
 
-		$ctrlfile = ROOTDIR."usr/ctrl/".strtolower($area)."/".$controller.".php";//这句话的strtolower是根据linux的调适而来
+		$ctrlfile = ROOTDIR."usr/Ctrl/".$area."/".$controller.".php";//这句话的strtolower是根据linux的调适而来
 
 		if(!file_exists($ctrlfile)){
 			new Http(404, "dispatch alert : Controller '$area/$controller' not found");
