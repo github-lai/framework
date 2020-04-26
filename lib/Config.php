@@ -4,7 +4,8 @@ namespace Lib;
 class Config{
 	
 	private static $config = null;
-	
+	public static $env = 'dev';
+
 	static function init($file)
 	{
 		if(self::$config == null){
@@ -13,12 +14,13 @@ class Config{
 			$array = parse_ini_file($file,true);
 			self::$config['global'] = $array;
 		}
+		self::$env = self::$config['current']['env'];
 	}
 
 	static function get($key)
 	{
-		if(isset(self::$config[ENV][$key])){
-			return self::$config[ENV][$key];
+		if(isset(self::$config[self::$env][$key])){
+			return self::$config[self::$env][$key];
 		}else{
 			return self::$config['global'][$key];
 		}
@@ -26,12 +28,12 @@ class Config{
 	
 	static function set($key,$val)
 	{
-		self::$config[ENV][$key] = $val;
+		self::$config[self::$env][$key] = $val;
 	}
 	
 	static function has($key)
 	{
-		if(isset(self::$config[ENV][$key])){
+		if(isset(self::$config[self::$env][$key])){
 			return true;
 		}elseif(isset(self::$config['global'][$key])){
 			return true;
