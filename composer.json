@@ -16,9 +16,9 @@
     	"files":[],
 	"psr-4":{
 	   "Lib\\" :"lib",
-	   "Lib\\Cache" :"lib/cache",
-	   "Lib\\Db" :"lib/db",
-	   "Lib\\IBase" :"lib/ibase"
+	   "Lib\\Cache\\" :"lib/cache",
+	   "Lib\\Db\\" :"lib/db",
+	   "Lib\\IBase\\" :"lib/ibase"
 	}
     }
 }
