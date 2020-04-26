@@ -60,7 +60,8 @@ class CtrlBase
 
 	function tpltmp($area,$tpl)
 	{
-		$name = strtolower("tpl.tmp.$area.$tpl.php");//缓存文件名
+		$md5 = md5("$area.$tpl");
+		$name = strtolower("tmp.$md5.php");//缓存文件名
 		$file = ROOTDIR."tmp/$name";
 		return $file;
 	}
@@ -101,7 +102,7 @@ class CtrlBase
 		$tplfull = $tpl.$ext;
 
 		//判断view是否存在
-		$viewfile = ROOTDIR."usr/tpl/".strtolower($area).'/'.strtolower($this->controller)."/".$tplfull;
+		$viewfile = ROOTDIR."usr/Tpl/".$area.'/'.$this->controller."/".$tplfull;
 		if(!file_exists($viewfile)){
 			die("找不到模板文件".$tplfull);
 		}
@@ -110,7 +111,7 @@ class CtrlBase
 				
 		if($layout !== false){
 			$layoutname = ($layout == null ? "_Layout" : $layout);
-			$masterfile = ROOTDIR."usr/tpl/".strtolower($area)."/".$layoutname.$ext;//在linux下大小写敏感，注意了
+			$masterfile = ROOTDIR."usr/Tpl/".$area."/".$layoutname.$ext;//在linux下大小写敏感，注意了
 			$tmp = "";
 			if(file_exists($masterfile)){
 				$tmp = file_get_contents($masterfile,"r");
