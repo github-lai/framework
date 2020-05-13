@@ -183,7 +183,7 @@ class Mysql {
 			return $this->rows();
 		}
 
-        public function update($bool)
+        public function update($bool=false)
 		{
 			if(count($this->pairs) == 0){
 				die("key-value pairs is required");
@@ -223,7 +223,7 @@ class Mysql {
 			return $this->result(true);
 		}
 
-        public function add($bool)
+        public function add($bool=false)
 		{
 			if(count($this->pairs)==0){
 				die("key-value pairs is required");

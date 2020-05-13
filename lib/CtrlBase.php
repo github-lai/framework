@@ -66,12 +66,8 @@ class CtrlBase
 		return $file;
 	}
 
-	function view($tpl,$layout) 
+	function view($tpl='Index', $layout='_Layout') 
 	{
-		if($tpl == "")
-		{
-			$tpl = "Index";//默认摸板
-		}
 
 		$area = $this->area;
 		if($area == "")
@@ -110,8 +106,7 @@ class CtrlBase
 		$content = file_get_contents($viewfile, "r");
 				
 		if($layout !== false){
-			$layoutname = ($layout == null ? "_Layout" : $layout);
-			$masterfile = ROOTDIR."usr/tpl/".strtolower($area)."/".$layoutname.$ext;//在linux下大小写敏感，注意了
+			$masterfile = ROOTDIR."usr/tpl/".strtolower($area)."/".$layout.$ext;//在linux下大小写敏感，注意了
 			$tmp = "";
 			if(file_exists($masterfile)){
 				$tmp = file_get_contents($masterfile,"r");
