@@ -17,7 +17,7 @@ class Mysql {
 		private $conn = null;
         private $tbname = "";
 		private $where = "";
-		private $order = null;
+		private $order = array();
 		private $limit = "";
 		private $pairs = array();//insert/update statement require this var
 
@@ -55,7 +55,7 @@ class Mysql {
         public function result($var)
 		{
 			$this->where = "";
-			$this->order = null;
+			$this->order = array();
 			$this->limit = "";
 			$this->pairs = array();
 			return $var;
@@ -95,9 +95,6 @@ class Mysql {
 
         public function desc()
 		{
-			if($this->order == null){
-				$this->order = array();
-			}
 		    $num = func_num_args();//参数个数
 			for($i = 0; $i < $num; $i++){
 				$field = func_get_arg($i);
@@ -115,9 +112,6 @@ class Mysql {
 
         public function asc()
 		{
-			if($this->order == null){
-				$this->order = array();
-			}
 		    $num = func_num_args();//参数个数
 			for($i = 0; $i < $num; $i++){
 				$field = func_get_arg($i);

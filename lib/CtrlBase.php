@@ -12,12 +12,20 @@ class CtrlBase
     public $controller = "";
     public $tpl = "";
 
+	public $charset = "utf-8";
+	public $contentType = "text/html";
+
 	function __construct(){
 
 	}
 
 	function __call($name,$args) {
 		new Http(404,"Action '$name' not found");
+	}
+
+	function setHeader()
+	{
+		header("Content-type: $this->contentType; charset=$this->charset");
 	}
 
 	function setArea($area)
@@ -34,7 +42,7 @@ class CtrlBase
 	{
 		$this->tpl = $tpl.Config::get("tplext");
 	}
-	
+
 	function set($key, $val)
 	{
 		//检查key是否存在
@@ -64,6 +72,12 @@ class CtrlBase
 		$name = strtolower("tmp.$md5.php");//缓存文件名
 		$file = ROOTDIR."tmp/$name";
 		return $file;
+	}
+
+	function json($content) 
+	{
+		$this->contentType = "application/json";
+		return stripslashes(json_encode($content));
 	}
 
 	function view($tpl='Index', $layout='_Layout') 

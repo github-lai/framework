@@ -142,6 +142,8 @@ class Router{
 			$ctrl->setController($controller);
 			$ctrl->setTpl($action);
 
+			$ctrl->setHeader();
+
 			echo $ctrl->$action($id);
 		}
 	}
