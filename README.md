@@ -17,4 +17,4 @@ composer require h3/framework:dev-master
 
 #### 参与贡献
 
-Lai
+Aliot Lai
