@@ -63,10 +63,11 @@ class Router{
 
 		$areas = Config::get("area");
 
-		$seg0 = ucfirst($path_info_array[0]);//取出第一个元素area
-		$seg1 = ucfirst($path_info_array[1]);//取出第二个元素controller
-		$seg2 = ucfirst($path_info_array[2]);//取出第三个元素action
-		$seg3 = $path_info_array[3];//取出第四个元素id
+		$num = count($path_info_array);
+		$seg0 = $num > 0 ? ucfirst($path_info_array[0]) : null;//取出第一个元素area
+		$seg1 = $num > 1 ? ucfirst($path_info_array[1]) : null;//取出第二个元素controller
+		$seg2 = $num > 2 ? ucfirst($path_info_array[2]) : null;//取出第三个元素action
+		$seg3 = $num > 3 ? $path_info_array[3] : null;//取出第四个元素id
 
 		$area =  $seg0;
 		if(substr($seg0,0,1) === '@'){
