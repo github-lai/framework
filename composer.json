@@ -2,7 +2,7 @@
     "name": "h3/framework",
     "description": "An highly effecient php mvc framework",
     "type": "library",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
         {
