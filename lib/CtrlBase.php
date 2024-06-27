@@ -70,7 +70,7 @@ class CtrlBase
 	{
 		$md5 = md5("$area.$tpl");
 		$name = strtolower("tmp.$md5.php");//缓存文件名
-		$file = ROOTDIR."tmp/$name";
+		$file = ROOTDIR."tmp".DIRECTORY_SEPARATOR.$name;
 		return $file;
 	}
 
@@ -112,7 +112,7 @@ class CtrlBase
 		$tplfull = $tpl.$ext;
 
 		//判断view是否存在
-		$viewfile = ROOTDIR."usr/tpl/".strtolower($area).'/'.strtolower($this->controller)."/".$tplfull;
+		$viewfile = ROOTDIR."usr".DIRECTORY_SEPARATOR."tpl".DIRECTORY_SEPARATOR.strtolower($area).DIRECTORY_SEPARATOR.strtolower($this->controller).DIRECTORY_SEPARATOR.$tplfull;
 		if(!file_exists($viewfile)){
 			die("找不到模板文件".$tplfull);
 		}
@@ -120,7 +120,7 @@ class CtrlBase
 		$content = file_get_contents($viewfile, "r");
 				
 		if($layout !== false){
-			$masterfile = ROOTDIR."usr/tpl/".strtolower($area)."/".$layout.$ext;//在linux下大小写敏感，注意了
+			$masterfile = ROOTDIR."usr".DIRECTORY_SEPARATOR."tpl".DIRECTORY_SEPARATOR.strtolower($area).DIRECTORY_SEPARATOR.$layout.$ext;//在linux下大小写敏感，注意了
 			$tmp = "";
 			if(file_exists($masterfile)){
 				$tmp = file_get_contents($masterfile,"r");

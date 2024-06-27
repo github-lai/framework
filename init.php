@@ -2,13 +2,13 @@
 date_default_timezone_set('Asia/Shanghai');
 ini_set("short_open_tag","On");
 
-define("ROOTDIR",getcwd().'/');
+define("ROOTDIR",getcwd().DIRECTORY_SEPARATOR);
 
-Lib\Config::init(ROOTDIR."usr/config.ini");
+Lib\Config::init(ROOTDIR."usr".DIRECTORY_SEPARATOR."config.ini");
 if(Lib\Config::has('auth')){
 	die('init alert : config.ini items are not allow named like "auth", change it to another');
 }
-Lib\Config::init(ROOTDIR."usr/auth.ini");
+Lib\Config::init(ROOTDIR."usr".DIRECTORY_SEPARATOR."auth.ini");
 
 if(Lib\Config::get('debug') == "true"){
 	error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
